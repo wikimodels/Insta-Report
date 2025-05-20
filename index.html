@@ -1,245 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Card Layout</title>
+    <title>API Documentation</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            line-height: 1.6;
+            margin: 0;
             padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
         }
-
+        h1, h2 {
+            color: #444;
+        }
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 10%;
-            max-height: 50vh;
-            min-width: 150px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .endpoint {
+            background: #f9f9f9;
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 5px solid #007BFF;
         }
-
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .endpoint h3 {
+            margin-top: 0;
+            color: #007BFF;
         }
-
-        .card .text {
+        pre {
+            background: #e9ecef;
             padding: 10px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: bold;
+            border-radius: 3px;
+            overflow-x: auto;
         }
-
-        @media (max-width: 768px) {
-            .card {
-                width: 100%;
-                max-height: none;
-            }
+        code {
+            font-family: monospace;
         }
     </style>
 </head>
-
 <body>
-    <!-- first -->
     <div class="container">
-        <div class="card">
-            <img src="images/img-1.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/kensai_fit/">@kensai_fit</a><br>Василий
-                Крупка<br>15.02.2025</div>
-        </div>
-        <div class="card">
-            <img src="images/img-2.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/svetik7cvetik87/">@svetik7cvetik87</a><br>Svetlana
-                M.<br>15.02.2025<br>gift</div>
-        </div>
-        <div class="card">
-            <img src="images/img-3.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/elite_brand.by/">@elite_brand.by</a><br>Noname
-                M.<br>16.02.2025</div>
-        </div>
-        <div class="card">
-            <img src="images/img-4.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/vannbal/">@vannbal</a><br>GYMmy<br>16.02.2025</div>
-        </div>
-        <div class="card">
-            <img src="images/img-5.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/dimson_fit/">@dimson_fit</a><br>Dmitry<br>16.02.2025
-            </div>
+        <h1>API Documentation</h1>
+
+        <div class="endpoint">
+            <h3>Fetch Coin Objects from Redis</h3>
+            <p><strong>Endpoint:</strong> <code>api/coins/all</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Fetches an array of Coin objects from Redis.</p>
+            <p><strong>Parameters:</strong> None</p>
+            <p><strong>Coin Object Structure:</strong></p>
+            <pre>
+{
+  "symbol": "string",
+  "category": "string",
+  "imageUrl": "string",
+  "exchanges": ["string"]
+}</pre>
         </div>
 
-
-        <div class="card">
-            <img src="images/img-8.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/yura_murashhenko/">@yura_murashhenko</a><br>Юра
-                Мурашенко<br>17.02.2025
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/img-9.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/yaaanii.x/">@yaaanii.x</a><br>Яночка<br>17.02.2025
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/img-10.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/miechhka/">@miechhka</a><br>Мария
-                Турцевич<br>17.02.2025
-                <br>gift
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/img-11.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/kirillmigun/">@kirillmigun</a>
-                <a href="https://www.instagram.com/kat_bogdanova.by/">@kat_bogdanova.by</a>
-                <br>Кирилл
-                Мигун и Кат. Богданова<br>18.02.2025
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/img-12.jpg" alt="Card Image">
-            <div class="text"><a
-                    href="https://www.instagram.com/chewylabrador/">@chewylabrador</a><br>Noname<br>18.02.2025
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/img-13.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/din._.din_/">@din._.din_</a><br>Денис
-                Малашко<br>18.02.2025
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/img-14.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/zarablake532/">@zarablake532</a><br>Zara
-                Blake<br>19.02.2025
-                <br>gift
-            </div>
+        <div class="endpoint">
+            <h3>Store Coin Objects in Redis</h3>
+            <p><strong>Endpoint:</strong> <code>api/coins/store</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Fetches an array of Coin objects from MongoDB and stores it in Vercel Redis.</p>
+            <p><strong>Parameters:</strong> None</p>
         </div>
 
-
-        <div class="card">
-            <img src="images/img-15.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/svetik7cvetik87/">@svetik7cvetik87</a><br>Svetlana
-                M.<br>19.02.2025<br>gift</div>
+        <div class="endpoint">
+            <h3>Fetch Sorted Coin Objects from Redis</h3>
+            <p><strong>Endpoint:</strong> <code>api/coins/sorted</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Fetches an array of Coin objects from Redis, sorted by the dominant exchange.</p>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>coinType</code>: "perp" | "spot"</li>
+                <li><code>dominant</code>: "Binance" | "Bybit"</li>
+            </ul>
+            <p><strong>Returns:</strong> Array of Coin objects filtered by blacklist.</p>
         </div>
 
-        <div class="card">
-            <img src="images/img-16.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/tata_2408/">@tata_2408</a><br>Татьяна
-                Коноплева<br>19.02.2025<br>gift</div>
-        </div>
-        <div class="card">
-            <img src="images/img-17.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/cerberus_sfx/">@cerberus_sfx</a><br>Aiden
-                Bonzer<br>19.02.2025
-                <br>gift
-            </div>
-        </div>
-
-        <!-- <div class="card">
-            <img src="images/img-19.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/matvei.muchinski/">@matvei.muchinski</a><br>Матвей
-                Мучинский<br>24.02.2025
-            </div>
-            <a href="https://www.instagram.com/roman_t1k/">@roman_t1k</a><br>Роман<br>24.02.2025
-        </div> -->
-        <div class="card">
-            <img src="images/img-20.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/kod_9415/">@kod_9415</a><br>Ваня<br>24.02.2025
-                <br>gift
-            </div>
+        <div class="endpoint">
+            <h3>Fetch Failed Coins from Redis</h3>
+            <p><strong>Endpoint:</strong> <code>api/coins/failed</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Fetches an array of failed coins from Redis.</p>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><code>coinType</code>: "perp" | "spot"</li>
+            </ul>
+            <p><strong>Returns:</strong> Array of failed coins for perp or spot.</p>
         </div>
 
-        <div class="card">
-            <img src="images/img-18.jpg" alt="Card Image">
-            <div class="text"><a
-                    href="https://www.instagram.com/k.a.z.i.m.o.v.a.s/">@k.a.z.i.m.o.v.a.s</a><br>Пісні<br>24.02.2025
-                <br>gift
-            </div>
+        <div class="endpoint">
+            <h3>Fetch Black List from Redis</h3>
+            <p><strong>Endpoint:</strong> <code>api/coins/black-list</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Fetches the black list from Redis.</p>
+            <p><strong>Parameters:</strong> None</p>
+            <p><strong>Returns:</strong> Black list with counts and sorted arrays of coins for perp and spot for Binance and Bybit.</p>
         </div>
 
-
-        <div class="card">
-            <img src="images/img-21.jpg" alt="Card Image">
-            <div class="text"><a
-                    href="https://www.instagram.com/dr.kk.orange/">@dr.kk.orange</a><br>Konstantinos<br>24.02.2025
-                <br>gift
-            </div>
+        <div class="endpoint">
+            <h3>Set Black List in Redis</h3>
+            <p><strong>Endpoint:</strong> <code>api/coins/black-list-set</code></p>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>Description:</strong> Sets the black list in Redis.</p>
+            <p><strong>Parameters:</strong></p>
+            <pre>
+{
+  "perp": {
+    "binance": ["string"],
+    "bybit": ["string"]
+  },
+  "spot": {
+    "binance": ["string"],
+    "bybit": ["string"]
+  }
+}</pre>
+            <p><strong>Returns:</strong> <code>{ "success": true, "data": body }</code> if the black list was set successfully.</p>
         </div>
 
-        <div class="card">
-            <img src="images/img-23.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/tata_2408/">@tata_2408</a><br>Татьяна
-                Коноплева<br>26.02.2025<br>gift</div>
+        <div class="endpoint">
+            <h3>Clean Failed Coins in Redis</h3>
+            <p><strong>Endpoint:</strong> <code>api/coins/failed-clean</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Cleans failed coins in Redis.</p>
+            <p><strong>Parameters:</strong> None</p>
         </div>
 
-
-        <div class="card">
-            <img src="images/img-22.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/snmake09/">@snmake09</a><br>Кирилл
-                Чистяков
-                <a href="https://www.instagram.com/andrey.18395/">@andrey.18395</a><br>Андрей Сушко
-                <br>26.02.2025<br>gift
-            </div>
+        <div class="endpoint">
+            <h3>Fetch API Documentation</h3>
+            <p><strong>Endpoint:</strong> <code>api/docs/coins</code></p>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>Description:</strong> Returns the API documentation.</p>
+            <p><strong>Parameters:</strong> None</p>
         </div>
-
-        <div class="card">
-            <img src="images/img-24.jpg" alt="Card Image">
-            <div class="text"><a
-                    href="https://www.instagram.com/faceless_daniel">@faceless_daniel</a><br>Даник<br>26.02.2025
-                <br>gift
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/img-25.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/ka3eka_1/">@ka3eka_1</a><br>Матфей Янковский
-                <a href="https://www.instagram.com/aleshka_aaa/">@aleshka_aaa</a><br>Лёша<br>26.02.2025<br>gift
-                <br>26.02.2025<br>gift
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/img-26.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/svetik7cvetik87/">@svetik7cvetik87</a><br>Svetlana
-                M.<br>28.02.2025<br>gift</div>
-        </div>
-
-        <div class="card">
-            <img src="images/img-27.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/im_riki_tiki">@im_riki_tiki</a><br>Svetlana
-                M.<br>28.02.2025<br>gift</div>
-        </div>
-
-        <div class="card">
-            <img src="images/img-28.jpg" alt="Card Image">
-            <div class="text"><a href="https://www.instagram.com/frankzbarse">@frankzbarse</a><br>Svetlana
-                M.<br>28.02.2025<br>gift</div>
-        </div>
-
-    </div>
-
-
     </div>
 </body>
-
 </html>
